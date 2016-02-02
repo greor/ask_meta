@@ -1,32 +1,9 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * UTF8 class modification.
- * Allow use additional custom transiliterate tables
- *
- * $Id$
- *
- * @package    kubik
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
 
 require SYSPATH.'classes/utf8'.EXT;
 
 UTF8::$called['transliterate_to_ascii'] = TRUE;
 
-/**
- * UTF8::transliterate_to_ascii
- *
- * @package    kubik
- * @package    Kohana
- * @author     Sergey Fidyk aka Frame
- * @author     Kohana Team
- * @copyright  (c) 2010 KubikRubik
- * @copyright  (c) 2007-2008 Kohana Team
- * @copyright  (c) 2005 Harry Fuecks
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
- */
 function _transliterate_to_ascii($str, $case = 0)
 {
 	static $UTF8_LOWER_ACCENTS = NULL;

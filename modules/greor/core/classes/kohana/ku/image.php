@@ -1,14 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * Image helper class extension.
- *
- * $Id$
- *
- * @package    Kubik Core
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 abstract class Kohana_Ku_Image extends Image {
 
 

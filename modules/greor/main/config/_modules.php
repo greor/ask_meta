@@ -3,7 +3,7 @@
 return array
 (
 // 	'news' => array(
-// 		'alias' => 'kubikrubik-news',
+// 		'alias' => 'greor-news',
 // 		'name' => 'News module',
 // 		'type' => Helper_Module::MODULE_MULTI,
 // 		'controller' => 'news_category'

@@ -1,13 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * Email module
- * Wrapper for Swift Mailer
- *
- * @package    spasibo
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2012 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 class Kohana_Email {
 
 	// SwiftMailer instance

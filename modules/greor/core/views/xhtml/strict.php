@@ -1,14 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * XHTML 1.0 Strict template.
- *
- * @package    Kubik Core
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
-?>
-<?php
+
 if ( ! empty($xml))
 {
 	echo ($xml === TRUE) ? '<?xml version="1.0"?>'."\n" : $xml."\n";

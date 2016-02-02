@@ -25,7 +25,7 @@ ENGINE=MyISAM
 AUTO_INCREMENT=2
 ;
 
-INSERT INTO `admins` (`id`, `site_id`, `email`, `username`, `password`, `role`, `token`, `logins`, `last_login`, `attempts`, `last_attempt`, `active`, `created`, `creator_id`, `updated`, `updater_id`, `deleted`, `deleter_id`, `delete_bit`) VALUES (1, 1, 'g.gudin@kubikrubik.ru', 'superadmin', '$2a$12$Uc5UVUwpOMtMGUHOAOcRS.ut0bYqxVss.SmpUjrWj05iextmv5CQW', 'super', '$2a$12$U3zfQylz1ila8hMgYeGVK.EgD', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0, 0, 0);
+INSERT INTO `admins` (`id`, `site_id`, `email`, `username`, `password`, `role`, `token`, `logins`, `last_login`, `attempts`, `last_attempt`, `active`, `created`, `creator_id`, `updated`, `updater_id`, `deleted`, `deleter_id`, `delete_bit`) VALUES (1, 1, 'gregor.zoonoid@gmail.com', 'superadmin', '$2a$12$Uc5UVUwpOMtMGUHOAOcRS.ut0bYqxVss.SmpUjrWj05iextmv5CQW', 'super', '$2a$12$U3zfQylz1ila8hMgYeGVK.EgD', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0, 0, 0);
 
 
 
@@ -272,5 +272,5 @@ ENGINE=MyISAM
 ROW_FORMAT=DEFAULT;
 
 
-INSERT INTO `sites` (`id`, `code`, `name`, `logo`, `image`, `type`, `mmt`, `active`, `sharing_image`, `title_tag`, `keywords_tag`, `description_tag`, `created`, `creator_id`, `updated`, `updater_id`, `deleted`, `deleter_id`, `delete_bit`) VALUES (1, '', 'Федеральный сайт', '', '', 'master', '00:00', 1, '', 'Федеральный сайт', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
+INSERT INTO `sites` (`id`, `code`, `name`, `logo`, `image`, `type`, `mmt`, `active`, `sharing_image`, `title_tag`, `keywords_tag`, `description_tag`, `created`, `creator_id`, `updated`, `updater_id`, `deleted`, `deleter_id`, `delete_bit`) VALUES (1, '', 'РћСЃРЅРѕРІРЅРѕР№ СЃР°Р№С‚', '', '', 'master', '00:00', 1, '', 'РћСЃРЅРѕРІРЅРѕР№ СЃР°Р№С‚', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 

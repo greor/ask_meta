@@ -1,14 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * Text helper class extension.
- *
- * $Id$
- *
- * @package    Kubik Core
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2012 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 class Kohana_Ku_Text extends Text {
 
 	/**

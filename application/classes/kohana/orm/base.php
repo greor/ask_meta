@@ -1,13 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * Extension of standard Kohana's ORM
- * Added support of base filtering by deleted, active and site_id columns.
- *
- * @package    Kohana/ORM
- * @author     Sergey Fidyk
- * @copyright  (c) 2012 KubikRubik Company
- * @license    http://kohanaframework.org/license
- */
+
 class Kohana_ORM_Base extends ORM {
 
 	const FILTER_NONE     = 0;

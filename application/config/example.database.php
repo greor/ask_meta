@@ -55,18 +55,4 @@ return array
 		'caching'      => FALSE,
 		'profiling'    => FALSE,
 	),
-	'performers' => array(
-		'type'       => 'mysql',
-		'connection' => array(
-			'hostname'   => 'DB_HOST',
-			'database'   => 'DB_NAME',
-			'username'   => 'DB_USER',
-			'password'   => 'DB_PASSWORD',
-			'persistent' => FALSE,
-		),
-		'table_prefix' => '',
-		'charset'      => 'utf8',
-		'caching'      => FALSE,
-		'profiling'    => TRUE,
-	),
 );

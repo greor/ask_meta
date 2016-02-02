@@ -1,13 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * ORM position interface
- * Allows sort record by many position fields
- *
- * @package    Kohana/ORM
- * @author     Sergey Fidyk
- * @copyright  (c) 2012 KubikRubik Company
- * @license    http://kohanaframework.org/license
- */
+
 interface ORM_Position {
 
 	const MOVE_PREV   = 1;

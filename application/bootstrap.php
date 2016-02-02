@@ -133,11 +133,11 @@ Kohana::modules(array(
 	'a2' =>	MODPATH.'wouterrr/a2', // A2 module
 	'kohana-sitemap' =>	MODPATH.'kohana-sitemap', // ThePixelDeveloper Sitemap module
 
-	'kubikrubik-core' => MODPATH.'kubikrubik/core', // Common helpers
-	'kubikrubik-email' => MODPATH.'kubikrubik/email', // Swift Mailer
-	'kubikrubik-thumb' => MODPATH.'kubikrubik/thumb', // Image thumb helper
-	'kubikrubik-orm-helper' => MODPATH.'kubikrubik/orm-helper', // ORM Helper
-	'kubikrubik-main' => MODPATH.'kubikrubik/main', // Main module
+	'greor-core' => MODPATH.'greor/core', // Common helpers
+	'greor-email' => MODPATH.'greor/email', // Swift Mailer
+	'greor-thumb' => MODPATH.'greor/thumb', // Image thumb helper
+	'greor-orm-helper' => MODPATH.'greor/orm-helper', // ORM Helper
+	'greor-main' => MODPATH.'greor/main', // Main module
 ));
 
 Ku_Dir::$default_dir_chmod = 0775;

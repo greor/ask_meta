@@ -1,14 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * HTML embedded script tag class.
- *
- * $Id$
- *
- * @package    kubik
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 class Kohana_Ku_HTML_Script_File extends Ku_HTML_Script_Embed {
 
 	protected $_file;
@@ -41,4 +32,4 @@ class Kohana_Ku_HTML_Script_File extends Ku_HTML_Script_Embed {
 		return parent::render();
 	}
 
-} // End Kohana_Ku_HTML_Script_File
+}

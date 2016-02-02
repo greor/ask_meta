@@ -1,12 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * ORM file interface
- *
- * @package    Kohana/ORM
- * @author     Sergey Fidyk
- * @copyright  (c) 2012 KubikRubik Company
- * @license    http://kohanaframework.org/license
- */
+
 interface ORM_File {
 
 	const ON_DELETE_UNLINK = 1;

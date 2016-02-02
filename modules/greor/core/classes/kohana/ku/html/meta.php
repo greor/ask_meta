@@ -1,15 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * Base HTML meta tag class.
- * Provides simple inculision css and js files.
- *
- * $Id$
- *
- * @package    kubik
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 abstract class Kohana_Ku_HTML_Meta extends Ku_HTML_Element {
 
 	protected $_tag = 'meta';

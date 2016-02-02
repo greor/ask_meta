@@ -72,7 +72,7 @@
 	</div>
 	<div class="container container-footer">
 		<footer>
-			<p class="pull-right">&copy; <?php echo date('Y')?> <a href="http://kubikrubik.ru" target="_blank">KubikRubik</a></p>
+			<p class="pull-right">&copy; <?php echo date('Y')?></p>
 		</footer>
 	</div>
 	

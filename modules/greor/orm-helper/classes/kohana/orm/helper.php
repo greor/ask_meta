@@ -1,14 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * Helper for standard Kohana's ORM
- * Added support of file fields, position fields,
- * safe delete and cascade delete.
- *
- * @package    Kohana/ORM
- * @author     Sergey Fidyk
- * @copyright  (c) 2012 KubikRubik Company
- * @license    http://kohanaframework.org/license
- */
+
 class Kohana_ORM_Helper implements ORM_File, ORM_Position, ORM_Restore {
 
 	/**

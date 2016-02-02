@@ -1,14 +1,4 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * Upload helper class extension.
- *
- * $Id$
- *
- * @package    Kubik Core
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
 
 class Kohana_Ku_Upload extends Upload {
 

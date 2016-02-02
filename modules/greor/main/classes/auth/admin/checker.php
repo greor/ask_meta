@@ -1,12 +1,5 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
-/**
- * Admin auth login checker.
- * Limits count of invalid logins from IP per hour
- *
- * @author     Sergey Fidyk
- * @copyright  (c) 2014 Kubikrubik
- */
 class Auth_Admin_Checker {
 
 	/**

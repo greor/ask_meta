@@ -1,14 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * Base HTML element class.
- *
- * $Id$
- *
- * @package    kubik
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2010 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 abstract class Kohana_Ku_HTML_Element extends ArrayObject {
 
 	// HTML tag

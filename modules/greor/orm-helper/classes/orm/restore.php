@@ -1,13 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * ORM restore interface
- * Provides safe deleting and restoring of records
- *
- * @package    Kohana/ORM
- * @author     Sergey Fidyk
- * @copyright  (c) 2012 KubikRubik Company
- * @license    http://kohanaframework.org/license
- */
+
 interface ORM_Restore {
 
 	const SLAVE_DELETE_STEP = 2;

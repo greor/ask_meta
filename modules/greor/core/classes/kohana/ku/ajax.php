@@ -1,13 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * AJAX helper.
- * Provides simple sending ajax response.
- *
- * @package    kubik
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 2012 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 class Kohana_Ku_AJAX {
 
 	/**

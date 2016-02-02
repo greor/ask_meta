@@ -1,15 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-/**
- * Ku_HTML_Head library.
- * Provides centralized method of generation head of page.
- *
- * $Id$
- *
- * @package    kubik
- * @author     Sergey Fidyk aka Frame
- * @copyright  (c) 200 KubikRubik
- * @license    http://kohanaphp.com/license.html
- */
+
 class Kohana_Ku_HTML_Head {
 
 	// Singleton instance
