@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /admin
+Disallow: /_preview
+Disallow: /widgets
+Disallow: /uploader
+# Allow: /assets/default/images
+Host: site.ru

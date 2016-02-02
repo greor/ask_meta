@@ -1,0 +1,48 @@
+body.auth {
+	height: 100%; 
+	min-height: 100%;
+}
+body.auth .container {
+	height: 100%; 
+	min-height: 100%;
+}
+body.auth .row {
+	height: 100%; 
+	min-height: 300px;
+}
+body.auth .span4 {
+	height: 100%; 
+	display: table; 
+	margin: 0 auto; 
+	float: none;
+}
+body.auth .central {
+	height: 100%; 
+	display: table-cell; 
+	vertical-align: middle;
+}
+form.auth {
+	margin: 0 auto;
+	text-align: right;
+	padding: 15px;
+}
+form.auth h1 {
+	margin: 0 0 10px 0;
+	font-size: 30px;
+}
+form.auth .input {
+	width: 290px;
+}
+form.auth .btn {
+	width: 150px;
+}
+img.start_logo {
+	margin: 0 auto 50px;
+	display: block;
+}
+.auth-remember{
+	display:inline-block;
+}
+.auth-checkbox {
+	margin-top: -1px !important;
+}

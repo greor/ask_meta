@@ -1,0 +1,10 @@
+
+CREATE TABLE `log_import` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`code` VARCHAR(255) NOT NULL,
+	`key` INT(10) UNSIGNED NOT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM
+;
