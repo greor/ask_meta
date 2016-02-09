@@ -124,25 +124,18 @@ class Controller_Admin_Pages extends Controller_Admin_Front {
 					'meta_tags'
 				);
 
-				if (empty($values['uri']) OR row_exist($orm, 'uri', $values['uri'])) {
+				if (empty($values['uri'])) {
 					$values['uri'] = transliterate_unique($values['title'], $orm, 'uri', array(
 						array('and', 'parent_id', '=', $parent_id)
 					));
 				}
-				if ( ! $this->acl->is_allowed($this->user, $orm, 'for_all_change')) {
-					unset($values['for_all']);
+				if ( ! IS_MASTER_SITE) {
+					$values['for_all'] = 0;
 				}
-				if ( ! $this->acl->is_allowed($this->user, $orm, 'can_hiding_change')) {
-					unset($values['can_hiding']);
+				if ( ! IS_MASTER_SITE) {
+					$values['can_hiding'] = 0;
 				}
-				if ( ! $this->acl->is_allowed($this->user, $orm, 'status_change')) {
-					unset($values['status']);
-				}
-				if ( ! $this->acl->is_allowed($this->user, $orm, 'page_type_change')) {
-					unset($values['type']);
-					unset($values['data']);
-				}
-
+			
 				$helper_orm->save($values + $_FILES);
 
 				Helper_Page::clear_cache();

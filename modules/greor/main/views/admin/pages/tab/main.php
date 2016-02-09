@@ -6,7 +6,7 @@
 	
 /**** for_all ****/
 	
-	if ($ACL->is_allowed($USER, $orm, 'for_all_change')) {
+	if (IS_MASTER_SITE) {
 		echo View_Admin::factory('form/checkbox', array(
 			'field' => 'for_all',
 			'errors' => $errors,
@@ -18,7 +18,7 @@
 	
 /**** can_hiding ****/
 	
-	if ($ACL->is_allowed($USER, $orm, 'can_hiding_change')) {
+	if (IS_MASTER_SITE) {
 		echo View_Admin::factory('form/checkbox', array(
 			'field' => 'can_hiding',
 			'errors' => $errors,
@@ -56,33 +56,29 @@
 	
 /**** status ****/
 	
-	if ($ACL->is_allowed($USER, $orm, 'status_change')) {
-		echo View_Admin::factory('form/control', array(
-			'field' => 'status',
-			'errors' => $errors,
-			'labels' => $labels,
-			'required' => $required,
-			'controls' => Form::select('status',  Kohana::$config->load('_pages.status'), (int) $orm->status, array(
-				'id' => 'status_field',
-				'class' => 'input-xxlarge',
-			)),
-		));
-	}
+	echo View_Admin::factory('form/control', array(
+		'field' => 'status',
+		'errors' => $errors,
+		'labels' => $labels,
+		'required' => $required,
+		'controls' => Form::select('status',  Kohana::$config->load('_pages.status'), (int) $orm->status, array(
+			'id' => 'status_field',
+			'class' => 'input-xxlarge',
+		)),
+	));
 	
 /**** page_type ****/
 	
-	if ($ACL->is_allowed($USER, $orm, 'page_type_change')) {
-		echo View_Admin::factory('form/page_type', array(
-			'type_field' => 'type',
-			'data_field' => 'data',
-			'page' => $orm,
-			'errors' => $errors,
-			'labels' => $labels,
-			'required' => $required,
-			'modules' => $modules,
-			'pages_list' => $pages,
-		));
-	}	
+	echo View_Admin::factory('form/page_type', array(
+		'type_field' => 'type',
+		'data_field' => 'data',
+		'page' => $orm,
+		'errors' => $errors,
+		'labels' => $labels,
+		'required' => $required,
+		'modules' => $modules,
+		'pages_list' => $pages,
+	));
 	
 /**** title ****/
 	

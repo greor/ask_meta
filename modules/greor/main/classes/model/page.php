@@ -62,7 +62,7 @@ class Model_Page extends ORM_Base {
 				array('not_empty'),
 				array('alpha_dash'),
 				array('max_length', array(':value', 255)),
-				array(array($this, 'unique_uri'), array(':validation')),
+				array(array($this, 'check_uri')),
 			),
 			'title' => array(
 				array('not_empty'),
@@ -170,26 +170,29 @@ class Model_Page extends ORM_Base {
 		return FALSE;
 	}
 
-// проверить при добавлении. возможно надо будет удалить строку с delete_Bit
-	public static function unique_uri($array)
+	public function check_uri($value)
 	{
-		$loaded = FALSE;
-
-		// только при добавлении
-		if ( empty($array['id']) ) {
-			$loaded = ORM::factory('page')
-				->select('id', 'site_id', 'parent_id', 'uri')
-				->where('site_id', '=', SITE_ID)
-				->and_where('parent_id', '=', $array['parent_id'])
-				->and_where('uri', '=', $array['uri'])
-				->and_where('delete_bit', '=', 0)
-				->find()
-				->loaded();
+		$orm = clone $this;
+		$orm->clear();
+	
+		if ($this->loaded()) {
+			$orm
+				->where('id', '!=', $this->id);
 		}
-
-		return ! $loaded;
+	
+		if ($this->for_all) {
+			$orm
+				->site_id(NULL);
+		}
+	
+		$orm
+			->where('parent_id', '=', $this->parent_id)
+			->where('uri', '=', $this->uri)
+			->find();
+	
+		return ! $orm->loaded();
 	}
-
+	
 	public static function check_link($link)
 	{
 		if (strpos($link, '//') !== FALSE)
