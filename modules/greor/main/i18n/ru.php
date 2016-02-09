@@ -32,6 +32,7 @@ return array(
 	'Set massage theme' => 'Выберете тему сообщения',
 	"':field' must not relate to oneself" => "':field' не может ссылаться на себя",
 	"Element already exist. Element mast has unique name, and unique pair 'Parent page'-'URI'" => "Элемент существует. Элемент должен иметь уникальное имя и уникальную пару значений 'Страница-родитель'-'URI'",
+	"An element with the same URI exists" => "Элемент с таким URI существует",
 
 	'Page type value must be input' => 'Дополнительные параметры типа страницы должны быть заполнены',
 	'Time must have 24-hour format.' => 'Время должно быть указано в 24-часовом формате.',
