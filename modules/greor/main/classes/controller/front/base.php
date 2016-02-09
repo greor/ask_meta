@@ -75,13 +75,15 @@ class Controller_Front_Base extends Controller_Template {
 		}
 	}
 
-	protected function breadcrumbs()
+	protected function breadcrumbs($page_id = NULL)
 	{
+		$page_id = empty($page_id) ? $this->page_id : $page_id;
+		
 		$return = array();
 		$url_base = URL::base();
 	
-		if ( ! empty($this->page_id)) {
-			$current_page_id = $this->page_id;
+		if ( ! empty($page_id)) {
+			$current_page_id = $page_id;
 			$stop = FALSE;
 	
 			while ( ! $stop) {
@@ -370,11 +372,7 @@ class Controller_Front_Base extends Controller_Template {
 		return $return;
 	}
 	
-	protected function menu_init_handlers() {
-// 		$this->menu_handlers[<page_alias>][] = function($item){
-// 			$item - menu item
-// 		};
-	}
+	protected function menu_init_handlers() {}
 
 	protected function json_send($data = array(), $ttl = NULL)
 	{
