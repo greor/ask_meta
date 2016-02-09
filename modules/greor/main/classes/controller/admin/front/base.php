@@ -61,6 +61,11 @@ class Controller_Admin_Front_Base extends Controller_Template {
 		$this->acl_init();
 		$this->site_init();
 		
+		$helper_acl = new Helper_ACL($this->acl);
+		$a2_config = Kohana::$config->load('admin/a2/base')
+			->as_array();
+		$helper_acl->inject($a2_config);
+		
 		if (Route::name($request->route()) == 'modules') {
 			$this->module_page_id = (int) $request->query('page');
 			
@@ -80,7 +85,11 @@ class Controller_Admin_Front_Base extends Controller_Template {
 			}
 			
 			$this->module_config = Helper_Module::load_config($this->module_config);
-			$this->acl_module();
+			
+			if ( ! Kohana::$is_cli) {
+				$config = Arr::get($this->module_config, 'a2');
+				$helper_acl->inject($config);
+			}
 			
 			if ( ! $this->acl->is_allowed($this->user, $request->controller().'_controller', 'access')) {
 				throw new HTTP_Exception_404();
@@ -90,8 +99,11 @@ class Controller_Admin_Front_Base extends Controller_Template {
 		$injectors = array();
 		foreach ($this->injectors as $_key => $_array) {
 			$params = Arr::get($_array, 1);
-			$object = new $_array[0]($request, $this->user, $this->acl, $params);
-			$injectors[$_key] = $object;
+			
+			if (class_exists($_array[0])) {
+				$object = new $_array[0]($request, $this->user, $this->acl, $params);
+				$injectors[$_key] = $object;
+			}
 		}
 		$this->injectors = $injectors;
 		unset($injectors);
@@ -157,17 +169,6 @@ class Controller_Admin_Front_Base extends Controller_Template {
 		$roles = array_keys($roles);
 	
 		return array_combine($roles, $roles);
-	}
-	
-	private function acl_module()
-	{
-		if (Kohana::$is_cli) {
-			return;
-		}
-	
-		$config = Arr::get($this->module_config, 'a2');
-		$helper_acl = new Helper_ACL($this->acl);
-		$helper_acl->inject($config);
 	}
 	
 	private function get_module_pages($module_key)
@@ -530,24 +531,6 @@ class Controller_Admin_Front_Base extends Controller_Template {
 	protected function _get_breadcrumbs()
 	{
 		return $this->breadcrumbs;
-	}
-	
-	protected function load_to_tmp($src)
-	{
-		sleep(1);
-		$dest_dir = str_replace('/', DIRECTORY_SEPARATOR, DOCROOT.'upload/tmp/');
-		if ( ! is_dir($dest_dir)) {
-			mkdir($dest_dir, 0755, TRUE);
-		}
-	
-		if (FALSE !== $data = file_get_contents($src)) {
-			$dest_file = $dest_dir.UTF8::strtolower( uniqid().'_'.basename($src));
-			if (FALSE !== file_put_contents($dest_file, $data)) {
-				return $dest_file;
-			}
-		}
-	
-		return FALSE;
 	}
 	
 } 
