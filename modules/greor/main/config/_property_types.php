@@ -7,6 +7,14 @@ return array
 		'rules' => array(
 		),
 	),
+	'text_editor' => array(
+		'type' => 'text',
+		'params' => array(
+			'editor' => TRUE
+		),
+		'rules' => array(
+		),
+	),
 	'string' => array(
 		'type' => 'simple',
 		'rules' => array(

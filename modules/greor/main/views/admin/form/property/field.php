@@ -36,13 +36,15 @@
 			break;
 			
 		case 'text':
+			$class = empty($item['params']['editor']) ? 'text-area-clear' : 'text_editor';
+			
 			echo View_Admin::factory('form/control', array(
 				'field' => $field,
 				'labels' => $labels,
 				'control_id' => $control_id,
 				'controls' => Form::textarea($field, $item['value'], array(
 					'id' => $control_id,
-					'class' => 'text-area-clear',
+					'class' => $class,
 					'placeholder' => __($title)
 				)),
 			));
