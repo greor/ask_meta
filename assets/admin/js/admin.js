@@ -40,7 +40,6 @@ $(function(){
 			$this.css({
 				minHeight: $this.height()+"px"
 			})
-			console.log($this, $this.height() );
 		}, 0);
 	});
 });
@@ -117,7 +116,12 @@ $(function(){
 		.iconselectmenu();
 });
 
-
+$(function(){
+	$(".foreign-element").each(function(){
+		var $target = $(this).find("td:first-child");
+		$target.html( "<i class=\"is-master icon-home\"></i>" + $target.html());
+	});
+});
 
 
 

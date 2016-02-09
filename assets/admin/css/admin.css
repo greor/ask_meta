@@ -358,12 +358,20 @@ table col[class*="span"] {
 	background-image: url(../img/glyphicons-halflings.png);
 }
 
-/*
-.foreign-element td {
-	background-color: #468847 !important;
-	color: #fff !important;
+.foreign-element td:first-child {
+	position: relative;
 }
-*/
+.foreign-element .is-master {
+	position: absolute;
+	display: block;
+	right: 3px;
+	bottom: 3px;
+	background-image: url(../img/glyphicons-halflings-color.png);
+}
+
+.foreign-element.hided-element .is-master {
+	background-image: url(../img/glyphicons-halflings-white.png);
+}
 
 .text-preview-holder {
 	

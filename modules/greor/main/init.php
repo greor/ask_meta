@@ -36,10 +36,12 @@ function array_merge_recursive_distinct(array & $array1, array & $array2) {
 
 function view_list_row_class(ORM $orm, array $hided_list) {
 	$class = '';
-	if (in_array($orm->id, $hided_list)) {
-		$class = 'hided-element';
-	} elseif ($orm->site_id != SITE_ID) {
+	
+	if ($orm->site_id != SITE_ID) {
 		$class = 'foreign-element';
+		if (in_array($orm->id, $hided_list)) {
+			$class .= ' hided-element';
+		}
 	} else {
 		$class = 'self-element';
 	}
