@@ -47,13 +47,13 @@
 						
 					$_li_class = empty($_item['class']) ? '' : ' '.$_item['class'];
 					if (isset($_item['use_query_for_active']) AND $_item['use_query_for_active'] == FALSE) {
-						$_li_class .= ($c_url == $_item['link']) ? ' class="active"' : '';
+						$_li_class .= ($c_url == $_item['link']) ? ' active' : '';
 					} else {
-						$_li_class .= ($c_url_q == $_item['link']) ? ' class="active"' : '';
+						$_li_class .= ($c_url_q == $_item['link']) ? ' active' : '';
 					}
 					$_icon = '<i class="'.Arr::get($_item, 'icon', 'icon-cog').'"></i>';
 					
-					echo '<li', $_li_class, '>',
+					echo '<li class="', $_li_class, '">',
 						 HTML::anchor($_item['link'], $_icon.$_item['title'], array(
 							'target' => empty($_item['target']) ? '_self' : $_item['target'],
 						 )), '</li>';

@@ -171,7 +171,7 @@ class Controller_Admin_Front_Base extends Controller_Template {
 		return array_combine($roles, $roles);
 	}
 	
-	private function get_module_pages($module_key)
+	protected function get_module_pages($module_key)
 	{
 		return ORM::factory('page')
 			->where('status', '>', 0)
