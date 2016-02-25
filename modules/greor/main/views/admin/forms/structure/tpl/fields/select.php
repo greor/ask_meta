@@ -29,7 +29,7 @@
 			
 			{{#options}}
 				<div class="controls">
-					<input class="js-field-option" type="text" name="set[{{id}}][options][]" value="{{value}}" />
+					<input class="js-field-option" type="text" name="set[{{key}}][options][]" value="{{value}}" />
 					<div class="btn-group kr-dyn-btn-group" style="float:none; display:inline-block; vertical-align:bottom;">
 						<button class="btn btn-primary js-inline-add" type="button" title="Добавить элемент"><i class="icon-plus"></i></button>
 						<button class="btn btn-danger js-inline-remove" type="button" title="Удалить элемент"><i class="icon-remove"></i></button>
@@ -38,7 +38,7 @@
 			{{/options}}
 			{{^options}}
 				<div class="controls">
-					<input class="js-field-option" type="text" name="set[{{id}}][options][]" value="" />
+					<input class="js-field-option" type="text" name="set[0][options][]" value="" />
 					<div class="btn-group kr-dyn-btn-group" style="float:none; display:inline-block; vertical-align:bottom;">
 						<button class="btn btn-primary js-inline-add" type="button" title="Добавить элемент"><i class="icon-plus"></i></button>
 						<button class="btn btn-danger js-inline-remove" type="button" title="Удалить элемент"><i class="icon-remove"></i></button>

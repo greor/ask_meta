@@ -111,13 +111,16 @@ class Controller_Admin_Forms_Structure extends Controller_Admin_Forms {
 				$orm->text_show_top = Kohana::$config->load('forms.default.text_show_top');
 			}
 			
+			$helper_form = new Helper_Form();
+			$fields = $helper_form->get_fields($orm);
+			
 			$this->template
 				->set_filename('forms/structure/edit')
 				->set('errors', $errors)
 				->set('helper_orm', $helper_orm)
 				->set('fields_types', Kohana::$config->load('_forms.type'))
 				->set('fields_std', Kohana::$config->load('forms.fields_std'))
-				->set('fields', $this->_get_rows($id));
+				->set('fields', $fields);
 				
 			if ($this->acl->is_allowed($this->user, $orm, 'add') ) {
 				$this->left_menu_form_add();
@@ -166,63 +169,6 @@ class Controller_Admin_Forms_Structure extends Controller_Admin_Forms {
 			$request
 				->redirect($this->back_url);
 		}
-	}
-	
-	private function _get_rows($id)
-	{
-		$fields = ORM::factory('form_Field')
-			->where('form_id', '=', $id)
-			->find_all();
-		
-		$result = array();
-		foreach ($fields as $_orm) {
-			$_values = $_orm->as_array();
-			$_additional = unserialize($_values['additional']);
-			
-			$_item = array_intersect_key($_values, array(
-				'id' => TRUE,
-				'type' => TRUE,
-				'position' => TRUE,
-				'title' => TRUE,
-				'default' => TRUE,
-				'required' => TRUE,
-			));
-			$_item['required'] = (bool) $_item['required'];
-			$_item['init'] = TRUE;
-			
-			switch ($_values['type']) {
-				case 'text':
-					if ( ! empty($_additional['email'])) {
-						$_item['email'] = TRUE;
-					}
-					break;
-				case 'textarea':
-					// Do nothing
-					break;
-				case 'checkbox':
-					// Do nothing
-					break;
-				case 'select':
-					if ( ! empty($_additional['options'])) {
-						$_item['options'] = $_additional['options'];
-					}
-					break;
-				case 'date':
-					if ( ! empty($_additional['current_time'])) {
-						$_item['current_time'] = TRUE;
-					}
-					break;
-				case 'counter':
-					if ( ! empty($_additional['range'])) {
-						$_item['range'] = $_additional['range'];
-					}
-					break;
-			}
-			
-			$result[] = $_item;
-		}
-			
-		return $result;
 	}
 	
 	private function _save_rows($orm)
@@ -299,7 +245,10 @@ class Controller_Admin_Forms_Structure extends Controller_Admin_Forms {
 				if ( ! empty($data['options']) AND is_array($data['options'])) {
 					$_key = 0;
 					foreach ($data['options'] as $_v) {
-						$options[ ++$_key ] = $_v;
+						$options[] = array(
+							'key' => $_key++,
+							'value' => $_v,
+						);
 					}
 				}
 				$values['additional'] = serialize(array(

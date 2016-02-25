@@ -48,7 +48,7 @@
 ?>
 				<!-- #tab-nav-insert# -->
 			</ul>
-			<div class="tab-content">
+			<div class="tab-content" style="overflow: visible;">
 				<div class="tab-pane active" id="tab-main">
 <?php
 					echo View_Admin::factory('forms/structure/tab/main', array(
@@ -57,7 +57,7 @@
 					)); 
 ?>
 				</div>
-				<div class="tab-pane" id="tab-fields" style="min-height:400px;overflow: visible;">
+				<div class="tab-pane" id="tab-fields" style="min-height:400px;overflow: visible;margin-bottom: 50px;">
 <?php
 					echo View_Admin::factory('forms/structure/tab/fields', array(
 						'helper_orm' => $helper_orm,
