@@ -246,7 +246,7 @@ class Controller_Admin_Forms_Structure extends Controller_Admin_Forms {
 					$_key = 0;
 					foreach ($data['options'] as $_v) {
 						$options[] = array(
-							'key' => $_key++,
+							'id' => $_key++,
 							'value' => $_v,
 						);
 					}
