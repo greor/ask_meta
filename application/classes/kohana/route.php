@@ -407,7 +407,7 @@ class Kohana_Route {
 		if ($this->_callback)
 		{
 			$closure = $this->_callback;
-			$params = call_user_func($closure, $uri);
+			$params = call_user_func($closure, $uri, $this);
 
 			if ( ! is_array($params))
 				return FALSE;

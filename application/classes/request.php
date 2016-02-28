@@ -111,10 +111,14 @@ class Request extends Kohana_Request {
 	public function set_module_routes($routes_config, $uri_base, $prefix, $cache)
 	{
 		$routes = array();
-
+		
 		foreach ($routes_config as $name => $route) {
 			$name = $prefix.'<->'.$name;
-			$uri_callback = $uri_base.Arr::get( $route, 'uri_callback' );
+			$uri_callback = Arr::get( $route, 'uri_callback' );
+			if (is_string($uri_callback)) {
+				$uri_callback = $uri_base.$uri_callback;
+			}
+			
 			$regex = Arr::get( $route, 'regex' );
 			$defaults = Arr::get( $route, 'defaults' );
 
