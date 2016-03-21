@@ -555,5 +555,69 @@ tr.active, tr.active td {
 
 
 
+.input-nomenclature > input[type="text"] {
+	width: 405px;
+}
+@media (max-width: 1200px) {
+	.input-nomenclature > input[type="text"] {
+		width: 305px;
+	}
+}
+@media (max-width: 767px) {
+	.input-nomenclature {
+		padding-right: 130px;
+	}
+	.input-nomenclature > input[type="text"] {
+		width: 100%;
+	}
+}
+
+.product-list {
+	cursor: default;
+}
+.product-list tr.active .list-title {
+	font-weight: 600;
+	color: #a0a0a0;
+}
+.product-list .nomenclature-list {
+	display: none;
+	list-style: circle;
+	padding-left: 20px;
+	margin: 10px 0;
+}
+.product-list .nomenclature-list li {
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.product-list .nomenclature-list li.active {
+	list-style: disc;
+	color: #cd1010;
+	font-weight: 600;
+}
+
+.product-list .caret-holder {
+	content: ".";
+	display: inline-block;
+	height: 0;
+	vertical-align: top;
+	width: 0;
+	border: 5px solid;
+	border-left-color: #888;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	float: right;
+	margin-top: 5px;
+}
+.product-list .loaded .caret-holder {
+	border-left-color: #000;
+}
+.product-list .active .caret-holder {
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-color: #000;
+	border-bottom-color: transparent;
+	margin-right: 5px;
+}
 
 

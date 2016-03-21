@@ -123,9 +123,15 @@ $(function(){
 	});
 });
 
-
-
-
-
-
+$(function(){
+	
+	console.log($('.delete_button'));
+	
+	$(".container").on("click", ".delete_button", function(){
+		return confirm("Вы действительно хотите удалить выбранный элемент?");
+	});
+	$(".btn[name=cancel]").on("click", function(){
+		return confirm("Выйти без сохранения?");
+	});
+});
 
