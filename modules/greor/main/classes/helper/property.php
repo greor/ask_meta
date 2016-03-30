@@ -297,7 +297,7 @@ class Helper_Property {
 			->and_where('owner_id', '=', $this->_owner_id)
 			->and_where('name', 'LIKE', $name.'%')
 			->find_all();
-	
+			
 		if ($result->count() <= 0) {
 			return NULL;
 		}
@@ -314,7 +314,14 @@ class Helper_Property {
 			} catch (Exception $e) {
 				continue;
 			}
+			
 			switch ($_type['type']) {
+				case 'text':
+					$_fetched = $this->fetch_text($_orm->name, $_type);
+					if ($_fetched !== NULL) {
+						$_value = $this->format_result($_type, $_fetched);
+					}
+					break;
 				case 'simple':
 				case 'file':
 					$_value = $this->format_result($_type, $_orm->as_array());
@@ -869,6 +876,7 @@ class Helper_Property {
 	public function get_list()
 	{
 		$return = array();
+		
 		foreach ($this->_conf as $_name => $_) {
 			$_val = $this->get($_name);
 			$return[$_name] = $_val;
