@@ -76,7 +76,7 @@ class Helper_Page {
 		$result = NULL;
 
 		if ( ! DONT_USE_CACHE) {
-			$cache_key = $page_orm->id.$field.$value;
+			$cache_key = $page_orm->id.':'.$field.':'.$value;
 			try {
 				$result = Cache::instance('page-helper')
 					->get( $cache_key );

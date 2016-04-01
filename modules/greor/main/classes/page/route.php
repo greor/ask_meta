@@ -46,7 +46,7 @@ class Page_Route extends Kohana {
 	{
 		$SITE_ID = empty($SITE_ID) ? ORM_Base::$site_id : $SITE_ID;
 		$uri = NULL;
-		$cache_key = __METHOD__.$parent_id.$SITE_ID;
+		$cache_key = __METHOD__.':'.$parent_id.':'.$SITE_ID;
 
 		if ( ! DONT_USE_CACHE)
 		{
@@ -113,7 +113,7 @@ class Page_Route extends Kohana {
 	{
 		$SITE_ID = empty($SITE_ID) ? ORM_Base::$site_id : $SITE_ID;
 		$matched = NULL;
-		$cache_key = __METHOD__.$uri.$SITE_ID;
+		$cache_key = __METHOD__.':'.$uri.':'.$SITE_ID;
 
 		if ( ! DONT_USE_CACHE)
 		{
@@ -216,7 +216,7 @@ class Page_Route extends Kohana {
 			return $return;
 		}
 		
-		$cache_key = __METHOD__.$real_name.$SITE_ID;
+		$cache_key = __METHOD__.':'.$real_name.':'.$SITE_ID;
 		if ( ! DONT_USE_CACHE) {
 			$return = Cache::instance('struct')
 				->get($cache_key);
@@ -254,7 +254,7 @@ class Page_Route extends Kohana {
 		$SITE_ID = empty($SITE_ID) ? ORM_Base::$site_id : $SITE_ID;
 		$return = NULL;
 
-		$cache_key = __METHOD__.$page_id.$SITE_ID;
+		$cache_key = __METHOD__.':'.$page_id.':'.$SITE_ID;
 
 		if ( ! DONT_USE_CACHE)
 		{
