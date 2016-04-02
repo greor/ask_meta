@@ -490,6 +490,7 @@ class Controller_Admin_Front_Base extends Controller_Template {
 	protected function value_multiple_date(array $values, $field)
 	{
 		$date = Arr::get($values, $field);
+		$date = array_filter($date);
 		$return = '';
 		if ( ! empty($date)) {
 			$return = trim($date['date'].' '.$date['time']);

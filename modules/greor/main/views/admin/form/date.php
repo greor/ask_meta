@@ -3,7 +3,7 @@
 	$required = empty($required) ? array() : $required;
 	$errors = empty($errors) ? array() : $errors;
 	$control_id = empty($control_id) ? $field.'_field' : $control_id;
-	$set_default = empty($set_default) ? TRUE : $set_default;
+	$set_default = ( ! isset($set_default)) ? TRUE : $set_default;
 	$readonly = empty($readonly) ? FALSE : TRUE;
 	$uniqid = uniqid();
 
