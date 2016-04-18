@@ -92,24 +92,8 @@
 	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/plupload-2.1.8/js/jquery.ui.plupload/jquery.ui.plupload.min.js"></script>
 	
 	
-	<?php if (0): ?>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/jquery-ui/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/jquery-ui/jquery-ui-i18n.js"></script>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/jquery-ui/themeswitchertool.js"></script>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/jquery-ui-timepicker/jquery-ui-timepicker-addon.js"></script>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/jquery-pretty-photo/jquery.prettyPhoto.js"></script>
-
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/plupload/plupload.full.js"></script>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/plupload/i18n/ru.js"></script>
-	<script type="text/javascript" src="<?php echo $ASSETS; ?>vendor/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
-
-	<?php endif; ?>
-	
-	
-	
+	<script type="text/javascript" src="<?php echo $ASSETS; ?>js/tmpl.js"></script>
 	<script type="text/javascript" src="<?php echo $ASSETS; ?>js/admin.js"></script>
-	
-	
 	
 </body>
 </html>
