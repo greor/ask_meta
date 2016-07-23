@@ -101,7 +101,7 @@ Kohana::init(array(
 define('DONT_USE_CACHE', (Kohana::$environment !== Kohana::PRODUCTION));
 define('FTP_UPLOAD', dirname(DOCROOT).DIRECTORY_SEPARATOR.'ftp_upload');
 
-Cookie::$salt = 'btmem5sgcy4ydcu0j0fss1qwu7jx2aqm7wtrh4kf5v';
+Cookie::$salt = 'btmem5sgcy4ydcu0j0fsjalo97jx2aqm7wtrh4kf5v';
 Route::$preview_salt = '10c4323c4f563c54a149ddbfdfc5c8eb'.date('y-m-d F l');
 
 /**
@@ -138,6 +138,11 @@ Kohana::modules(array(
 	'greor-thumb' => MODPATH.'greor/thumb', // Image thumb helper
 	'greor-orm-helper' => MODPATH.'greor/orm-helper', // ORM Helper
 	'greor-main' => MODPATH.'greor/main', // Main module
+	
+	'greor-feedback' => MODPATH.'greor/feedback', // Feedback module
+	'greor-news' => MODPATH.'greor/news', // News module
+	'greor-photo' => MODPATH.'greor/photo', // News module
+	'greor-blog' => MODPATH.'greor/blog', // Blog module
 ));
 
 Ku_Dir::$default_dir_chmod = 0775;

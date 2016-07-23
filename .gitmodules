@@ -40,3 +40,15 @@
 [submodule "modules/kohana-sitemap"]
 	path = modules/kohana-sitemap
 	url = https://github.com/ThePixelDeveloper/kohana-sitemap.git
+[submodule "modules/greor/feedback"]
+	path = modules/greor/feedback
+	url = https://github.com/greor/kohana-feedback.git
+[submodule "modules/greor/blog"]
+	path = modules/greor/blog
+	url = https://github.com/greor/kohana-blog.git
+[submodule "modules/greor/photo"]
+	path = modules/greor/photo
+	url = https://github.com/greor/kohana-photo.git
+[submodule "modules/greor/news"]
+	path = modules/greor/news
+	url = https://github.com/greor/kohana-news.git
